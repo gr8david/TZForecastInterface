@@ -1,0 +1,264 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{16674A36-99B5-4DBC-BFDE-24AAF28EA362}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>TZForecastInterface</RootNamespace>
+    <AssemblyName>TZForecastInterface</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Epicor.Ice">
+      <HintPath>\\tz-man-snd2\c$\inetpub\wwwroot\ERP10\Server\Assemblies\Epicor.Ice.dll</HintPath>
+    </Reference>
+    <Reference Include="Epicor.System">
+      <HintPath>\\tz-man-snd2\c$\inetpub\wwwroot\ERP10\Server\Bin\Epicor.System.dll</HintPath>
+    </Reference>
+    <Reference Include="Erp.Common.ContractInterfaces">
+      <HintPath>\\tz-man-snd2\c$\inetpub\wwwroot\ERP10\Server\Assemblies\Erp.Common.ContractInterfaces.dll</HintPath>
+    </Reference>
+    <Reference Include="Ice.Core.Session">
+      <HintPath>\\tz-man-snd2\c$\Epicor\ERP10_2\Ice.Core.Session.dll</HintPath>
+    </Reference>
+    <Reference Include="Ice.Data.Model">
+      <HintPath>\\tz-man-snd2\c$\inetpub\wwwroot\ERP10\Server\Assemblies\Ice.Data.Model.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Company.cs" />
+    <Compile Include="dsDaysOfWeek.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDaysOfWeek.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsDetailFcst.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDetailFcst.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsDetailSafetyStock.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsDetailSafetyStock.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsICPOSugg.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsICPOSugg.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsPartPlantFcstMethods.cs">
+      <DependentUpon>dsPartPlantFcstMethods.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsPartPlantFcstMethods.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsPartPlantFcstMethods.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsSafetyStock.cs">
+      <DependentUpon>dsSafetyStock.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsSafetyStock.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSafetyStock.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsSalesOrders.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSalesOrders.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsSummaryFcst.cs">
+      <DependentUpon>dsSummaryFcst.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="dsSummaryFcst.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dsSummaryFcst.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="SafetyStockForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="SafetyStockForm.Designer.cs">
+      <DependentUpon>SafetyStockForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Global.cs" />
+    <Compile Include="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MessageDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MessageDisplay.Designer.cs">
+      <DependentUpon>MessageDisplay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Period.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Setup.cs" />
+    <Compile Include="StringEnum.cs" />
+    <Compile Include="Utils.cs" />
+    <EmbeddedResource Include="MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MessageDisplay.resx">
+      <DependentUpon>MessageDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="SafetyStockForm.resx">
+      <DependentUpon>SafetyStockForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="dsDaysOfWeek.xsc">
+      <DependentUpon>dsDaysOfWeek.xsd</DependentUpon>
+    </None>
+    <None Include="dsDaysOfWeek.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDaysOfWeek.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsDaysOfWeek.xss">
+      <DependentUpon>dsDaysOfWeek.xsd</DependentUpon>
+    </None>
+    <None Include="dsDetailFcst.xsc">
+      <DependentUpon>dsDetailFcst.xsd</DependentUpon>
+    </None>
+    <None Include="dsDetailFcst.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDetailFcst.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsDetailFcst.xss">
+      <DependentUpon>dsDetailFcst.xsd</DependentUpon>
+    </None>
+    <None Include="dsDetailSafetyStock.xsc">
+      <DependentUpon>dsDetailSafetyStock.xsd</DependentUpon>
+    </None>
+    <None Include="dsDetailSafetyStock.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsDetailSafetyStock.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsDetailSafetyStock.xss">
+      <DependentUpon>dsDetailSafetyStock.xsd</DependentUpon>
+    </None>
+    <None Include="dsICPOSugg.xsc">
+      <DependentUpon>dsICPOSugg.xsd</DependentUpon>
+    </None>
+    <None Include="dsICPOSugg.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsICPOSugg.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsICPOSugg.xss">
+      <DependentUpon>dsICPOSugg.xsd</DependentUpon>
+    </None>
+    <None Include="dsPartPlantFcstMethods.xsc">
+      <DependentUpon>dsPartPlantFcstMethods.xsd</DependentUpon>
+    </None>
+    <None Include="dsPartPlantFcstMethods.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsPartPlantFcstMethods.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsPartPlantFcstMethods.xss">
+      <DependentUpon>dsPartPlantFcstMethods.xsd</DependentUpon>
+    </None>
+    <None Include="dsSafetyStock.xsc">
+      <DependentUpon>dsSafetyStock.xsd</DependentUpon>
+    </None>
+    <None Include="dsSafetyStock.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSafetyStock.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsSafetyStock.xss">
+      <DependentUpon>dsSafetyStock.xsd</DependentUpon>
+    </None>
+    <None Include="dsSalesOrders.xsc">
+      <DependentUpon>dsSalesOrders.xsd</DependentUpon>
+    </None>
+    <None Include="dsSalesOrders.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSalesOrders.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsSalesOrders.xss">
+      <DependentUpon>dsSalesOrders.xsd</DependentUpon>
+    </None>
+    <None Include="dsSummaryFcst.xsc">
+      <DependentUpon>dsSummaryFcst.xsd</DependentUpon>
+    </None>
+    <None Include="dsSummaryFcst.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>dsSummaryFcst.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="dsSummaryFcst.xss">
+      <DependentUpon>dsSummaryFcst.xsd</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <None Include="TZForecastInterface.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>

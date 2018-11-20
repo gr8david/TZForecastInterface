@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsICPOSugg" targetNamespace="http://tempuri.org/dsICPOSugg.xsd" xmlns:mstns="http://tempuri.org/dsICPOSugg.xsd" xmlns="http://tempuri.org/dsICPOSugg.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsICPOSugg" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsICPOSugg" msprop:Generator_UserDSName="dsICPOSugg">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtICPOSugg" msprop:Generator_TableClassName="dtICPOSuggDataTable" msprop:Generator_TableVarName="tabledtICPOSugg" msprop:Generator_TablePropName="dtICPOSugg" msprop:Generator_RowDeletingName="dtICPOSuggRowDeleting" msprop:Generator_RowChangingName="dtICPOSuggRowChanging" msprop:Generator_RowEvHandlerName="dtICPOSuggRowChangeEventHandler" msprop:Generator_RowDeletedName="dtICPOSuggRowDeleted" msprop:Generator_UserTableName="dtICPOSugg" msprop:Generator_RowChangedName="dtICPOSuggRowChanged" msprop:Generator_RowEvArgName="dtICPOSuggRowChangeEvent" msprop:Generator_RowClassName="dtICPOSuggRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Company" msprop:Generator_ColumnVarNameInTable="columnCompany" msprop:Generator_ColumnPropNameInRow="Company" msprop:Generator_ColumnPropNameInTable="CompanyColumn" msprop:Generator_UserColumnName="Company">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Plant" msprop:Generator_ColumnVarNameInTable="columnPlant" msprop:Generator_ColumnPropNameInRow="Plant" msprop:Generator_ColumnPropNameInTable="PlantColumn" msprop:Generator_UserColumnName="Plant">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PartNum" msprop:Generator_ColumnVarNameInTable="columnPartNum" msprop:Generator_ColumnPropNameInRow="PartNum" msprop:Generator_ColumnPropNameInTable="PartNumColumn" msprop:Generator_UserColumnName="PartNum">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="DueDate" msprop:Generator_ColumnVarNameInTable="columnDueDate" msprop:Generator_ColumnPropNameInRow="DueDate" msprop:Generator_ColumnPropNameInTable="DueDateColumn" msprop:Generator_UserColumnName="DueDate" type="xs:dateTime" />
+              <xs:element name="RelQty" msprop:Generator_ColumnVarNameInTable="columnRelQty" msprop:Generator_ColumnPropNameInRow="RelQty" msprop:Generator_ColumnPropNameInTable="RelQtyColumn" msprop:Generator_UserColumnName="RelQty" type="xs:decimal" default="0" />
+              <xs:element name="ClassID" msprop:Generator_ColumnVarNameInTable="columnClassID" msprop:Generator_ColumnPropNameInRow="ClassID" msprop:Generator_ColumnPropNameInTable="ClassIDColumn" msprop:Generator_UserColumnName="ClassID" type="xs:string" minOccurs="0" />
+              <xs:element name="ShipDate" msprop:Generator_ColumnVarNameInTable="columnShipDate" msprop:Generator_ColumnPropNameInRow="ShipDate" msprop:Generator_ColumnPropNameInTable="ShipDateColumn" msprop:Generator_UserColumnName="ShipDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ForePeriod" msprop:Generator_ColumnVarNameInTable="columnForePeriod" msprop:Generator_ColumnPropNameInRow="ForePeriod" msprop:Generator_ColumnPropNameInTable="ForePeriodColumn" msprop:Generator_UserColumnName="ForePeriod" type="xs:int" default="0" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsDaysOfWeek" targetNamespace="http://tempuri.org/dsDaysOfWeek.xsd" xmlns:mstns="http://tempuri.org/dsDaysOfWeek.xsd" xmlns="http://tempuri.org/dsDaysOfWeek.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsDaysOfWeek" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsDaysOfWeek" msprop:Generator_UserDSName="dsDaysOfWeek">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtDaysOfWeek" msprop:Generator_TableClassName="dtDaysOfWeekDataTable" msprop:Generator_TableVarName="tabledtDaysOfWeek" msprop:Generator_RowChangedName="dtDaysOfWeekRowChanged" msprop:Generator_TablePropName="dtDaysOfWeek" msprop:Generator_RowDeletingName="dtDaysOfWeekRowDeleting" msprop:Generator_RowChangingName="dtDaysOfWeekRowChanging" msprop:Generator_RowEvHandlerName="dtDaysOfWeekRowChangeEventHandler" msprop:Generator_RowDeletedName="dtDaysOfWeekRowDeleted" msprop:Generator_RowClassName="dtDaysOfWeekRow" msprop:Generator_UserTableName="dtDaysOfWeek" msprop:Generator_RowEvArgName="dtDaysOfWeekRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Period" msprop:Generator_ColumnVarNameInTable="columnPeriod" msprop:Generator_ColumnPropNameInRow="Period" msprop:Generator_ColumnPropNameInTable="PeriodColumn" msprop:Generator_UserColumnName="Period" type="xs:int" />
+              <xs:element name="DayOfWeek" msprop:Generator_ColumnVarNameInTable="columnDayOfWeek" msprop:Generator_ColumnPropNameInRow="DayOfWeek" msprop:Generator_ColumnPropNameInTable="DayOfWeekColumn" msprop:Generator_UserColumnName="DayOfWeek" type="xs:short" />
+              <xs:element name="DayCount" msprop:Generator_ColumnVarNameInTable="columnDayCount" msprop:Generator_ColumnPropNameInRow="DayCount" msprop:Generator_ColumnPropNameInTable="DayCountColumn" msprop:Generator_UserColumnName="DayCount" type="xs:short" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="PK_dtDaysOfWeek" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:dtDaysOfWeek" />
+      <xs:field xpath="mstns:Period" />
+      <xs:field xpath="mstns:DayOfWeek" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsDetailSafetyStock" targetNamespace="http://tempuri.org/dsDetailSafetyStock.xsd" xmlns:mstns="http://tempuri.org/dsDetailSafetyStock.xsd" xmlns="http://tempuri.org/dsDetailSafetyStock.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsDetailSafetyStock" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsDetailSafetyStock" msprop:Generator_UserDSName="dsDetailSafetyStock">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtDetailSafetyStock" msprop:Generator_TableClassName="dtDetailSafetyStockDataTable" msprop:Generator_TableVarName="tabledtDetailSafetyStock" msprop:Generator_TablePropName="dtDetailSafetyStock" msprop:Generator_RowDeletingName="dtDetailSafetyStockRowDeleting" msprop:Generator_RowChangingName="dtDetailSafetyStockRowChanging" msprop:Generator_RowEvHandlerName="dtDetailSafetyStockRowChangeEventHandler" msprop:Generator_RowDeletedName="dtDetailSafetyStockRowDeleted" msprop:Generator_UserTableName="dtDetailSafetyStock" msprop:Generator_RowChangedName="dtDetailSafetyStockRowChanged" msprop:Generator_RowEvArgName="dtDetailSafetyStockRowChangeEvent" msprop:Generator_RowClassName="dtDetailSafetyStockRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Company" msprop:Generator_ColumnVarNameInTable="columnCompany" msprop:Generator_ColumnPropNameInRow="Company" msprop:Generator_ColumnPropNameInTable="CompanyColumn" msprop:Generator_UserColumnName="Company" default="" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Plant" msprop:Generator_ColumnVarNameInTable="columnPlant" msprop:Generator_ColumnPropNameInRow="Plant" msprop:Generator_ColumnPropNameInTable="PlantColumn" msprop:Generator_UserColumnName="Plant" default="" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PartNum" msprop:Generator_ColumnVarNameInTable="columnPartNum" msprop:Generator_ColumnPropNameInRow="PartNum" msprop:Generator_ColumnPropNameInTable="PartNumColumn" msprop:Generator_UserColumnName="PartNum" default="" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SafetyQty" msprop:Generator_ColumnVarNameInTable="columnSafetyQty" msprop:Generator_ColumnPropNameInRow="SafetyQty" msprop:Generator_ColumnPropNameInTable="SafetyQtyColumn" msprop:Generator_UserColumnName="SafetyQty" type="xs:int" default="0" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

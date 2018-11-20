@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsSafetyStock" targetNamespace="http://tempuri.org/dsSafetyStock.xsd" xmlns:mstns="http://tempuri.org/dsSafetyStock.xsd" xmlns="http://tempuri.org/dsSafetyStock.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsSafetyStock" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsSafetyStock" msprop:Generator_UserDSName="dsSafetyStock">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtSafetyStock" msprop:Generator_TableClassName="dtSafetyStockDataTable" msprop:Generator_TableVarName="tabledtSafetyStock" msprop:Generator_TablePropName="dtSafetyStock" msprop:Generator_RowDeletingName="dtSafetyStockRowDeleting" msprop:Generator_RowChangingName="dtSafetyStockRowChanging" msprop:Generator_RowEvHandlerName="dtSafetyStockRowChangeEventHandler" msprop:Generator_RowDeletedName="dtSafetyStockRowDeleted" msprop:Generator_UserTableName="dtSafetyStock" msprop:Generator_RowChangedName="dtSafetyStockRowChanged" msprop:Generator_RowEvArgName="dtSafetyStockRowChangeEvent" msprop:Generator_RowClassName="dtSafetyStockRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Company" msprop:Generator_ColumnVarNameInTable="columnCompany" msprop:Generator_ColumnPropNameInRow="Company" msprop:Generator_ColumnPropNameInTable="CompanyColumn" msprop:Generator_UserColumnName="Company" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Plant" msprop:Generator_ColumnVarNameInTable="columnPlant" msprop:Generator_ColumnPropNameInRow="Plant" msprop:Generator_ColumnPropNameInTable="PlantColumn" msprop:Generator_UserColumnName="Plant" type="xs:string" minOccurs="0" />
+              <xs:element name="PartNum" msprop:Generator_ColumnVarNameInTable="columnPartNum" msprop:Generator_ColumnPropNameInRow="PartNum" msprop:Generator_ColumnPropNameInTable="PartNumColumn" msprop:Generator_UserColumnName="PartNum" type="xs:string" minOccurs="0" />
+              <xs:element name="Usage_Qty" msprop:Generator_ColumnVarNameInTable="columnUsage_Qty" msprop:Generator_ColumnPropNameInRow="Usage_Qty" msprop:Generator_ColumnPropNameInTable="Usage_QtyColumn" msprop:Generator_UserColumnName="Usage_Qty" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="Usage_Months" msprop:Generator_ColumnVarNameInTable="columnUsage_Months" msprop:Generator_ColumnPropNameInRow="Usage_Months" msprop:Generator_ColumnPropNameInTable="Usage_MonthsColumn" msprop:Generator_UserColumnName="Usage_Months" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="Forecast_Qty" msprop:Generator_ColumnVarNameInTable="columnForecast_Qty" msprop:Generator_ColumnPropNameInRow="Forecast_Qty" msprop:Generator_ColumnPropNameInTable="Forecast_QtyColumn" msprop:Generator_UserColumnName="Forecast_Qty" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="Forecast_Months" msprop:Generator_ColumnVarNameInTable="columnForecast_Months" msprop:Generator_ColumnPropNameInRow="Forecast_Months" msprop:Generator_ColumnPropNameInTable="Forecast_MonthsColumn" msprop:Generator_UserColumnName="Forecast_Months" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="Basis" msprop:Generator_ColumnVarNameInTable="columnBasis" msprop:Generator_ColumnPropNameInRow="Basis" msprop:Generator_ColumnPropNameInTable="BasisColumn" msprop:Generator_UserColumnName="Basis" type="xs:string" minOccurs="0" />
+              <xs:element name="NumMonthsToAverage" msprop:Generator_ColumnVarNameInTable="columnNumMonthsToAverage" msprop:Generator_ColumnPropNameInRow="NumMonthsToAverage" msprop:Generator_ColumnPropNameInTable="NumMonthsToAverageColumn" msprop:Generator_UserColumnName="NumMonthsToAverage" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="WeeksSafety" msprop:Generator_ColumnVarNameInTable="columnWeeksSafety" msprop:Generator_ColumnPropNameInRow="WeeksSafety" msprop:Generator_ColumnPropNameInTable="WeeksSafetyColumn" msprop:Generator_UserColumnName="WeeksSafety" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="LeadTime" msprop:Generator_ColumnVarNameInTable="columnLeadTime" msprop:Generator_ColumnPropNameInRow="LeadTime" msprop:Generator_ColumnPropNameInTable="LeadTimeColumn" msprop:Generator_UserColumnName="LeadTime" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="LeadTimeMultiplier" msprop:Generator_ColumnVarNameInTable="columnLeadTimeMultiplier" msprop:Generator_ColumnPropNameInRow="LeadTimeMultiplier" msprop:Generator_ColumnPropNameInTable="LeadTimeMultiplierColumn" msprop:Generator_UserColumnName="LeadTimeMultiplier" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="ICUsage_Qty" msprop:Generator_ColumnVarNameInTable="columnICUsage_Qty" msprop:Generator_ColumnPropNameInRow="ICUsage_Qty" msprop:Generator_ColumnPropNameInTable="ICUsage_QtyColumn" msprop:Generator_UserColumnName="ICUsage_Qty" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ICUsage_Months" msprop:Generator_ColumnVarNameInTable="columnICUsage_Months" msprop:Generator_ColumnPropNameInRow="ICUsage_Months" msprop:Generator_ColumnPropNameInTable="ICUsage_MonthsColumn" msprop:Generator_UserColumnName="ICUsage_Months" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="ICForecast_Qty" msprop:Generator_ColumnVarNameInTable="columnICForecast_Qty" msprop:Generator_ColumnPropNameInRow="ICForecast_Qty" msprop:Generator_ColumnPropNameInTable="ICForecast_QtyColumn" msprop:Generator_UserColumnName="ICForecast_Qty" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="ICForecast_Months" msprop:Generator_ColumnVarNameInTable="columnICForecast_Months" msprop:Generator_ColumnPropNameInRow="ICForecast_Months" msprop:Generator_ColumnPropNameInTable="ICForecast_MonthsColumn" msprop:Generator_UserColumnName="ICForecast_Months" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="ICBasis" msprop:Generator_ColumnVarNameInTable="columnICBasis" msprop:Generator_ColumnPropNameInRow="ICBasis" msprop:Generator_ColumnPropNameInTable="ICBasisColumn" msprop:Generator_UserColumnName="ICBasis" type="xs:string" minOccurs="0" />
+              <xs:element name="ICNumMonthsToAverage" msprop:Generator_ColumnVarNameInTable="columnICNumMonthsToAverage" msprop:Generator_ColumnPropNameInRow="ICNumMonthsToAverage" msprop:Generator_ColumnPropNameInTable="ICNumMonthsToAverageColumn" msprop:Generator_UserColumnName="ICNumMonthsToAverage" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="ICWeeksSafety" msprop:Generator_ColumnVarNameInTable="columnICWeeksSafety" msprop:Generator_ColumnPropNameInRow="ICWeeksSafety" msprop:Generator_ColumnPropNameInTable="ICWeeksSafetyColumn" msprop:Generator_UserColumnName="ICWeeksSafety" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="ICLeadTime" msprop:Generator_ColumnVarNameInTable="columnICLeadTime" msprop:Generator_ColumnPropNameInRow="ICLeadTime" msprop:Generator_ColumnPropNameInTable="ICLeadTimeColumn" msprop:Generator_UserColumnName="ICLeadTime" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="ICLeadTimeMultiplier" msprop:Generator_ColumnVarNameInTable="columnICLeadTimeMultiplier" msprop:Generator_ColumnPropNameInRow="ICLeadTimeMultiplier" msprop:Generator_ColumnPropNameInTable="ICLeadTimeMultiplierColumn" msprop:Generator_UserColumnName="ICLeadTimeMultiplier" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="SafetyStock" msprop:Generator_ColumnVarNameInTable="columnSafetyStock" msprop:Generator_ColumnPropNameInRow="SafetyStock" msprop:Generator_ColumnPropNameInTable="SafetyStockColumn" msprop:Generator_UserColumnName="SafetyStock" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="SafetyStockMethod" msprop:Generator_ColumnVarNameInTable="columnSafetyStockMethod" msprop:Generator_ColumnPropNameInRow="SafetyStockMethod" msprop:Generator_ColumnPropNameInTable="SafetyStockMethodColumn" msprop:Generator_UserColumnName="SafetyStockMethod" type="xs:string" minOccurs="0" />
+              <xs:element name="ICSafetyStock" msprop:Generator_ColumnVarNameInTable="columnICSafetyStock" msprop:Generator_ColumnPropNameInRow="ICSafetyStock" msprop:Generator_ColumnPropNameInTable="ICSafetyStockColumn" msprop:Generator_UserColumnName="ICSafetyStock" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="ICSafetyStockMethod" msprop:Generator_ColumnVarNameInTable="columnICSafetyStockMethod" msprop:Generator_ColumnPropNameInRow="ICSafetyStockMethod" msprop:Generator_ColumnPropNameInTable="ICSafetyStockMethodColumn" msprop:Generator_UserColumnName="ICSafetyStockMethod" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -1,0 +1,79 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsPartPlantFcstMethods" targetNamespace="http://tempuri.org/dsPartPlantFcstMethods.xsd" xmlns:mstns="http://tempuri.org/dsPartPlantFcstMethods.xsd" xmlns="http://tempuri.org/dsPartPlantFcstMethods.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsPartPlantFcstMethods" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsPartPlantFcstMethods" msprop:Generator_UserDSName="dsPartPlantFcstMethods">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtPartPlantFcstMethods" msprop:Generator_TableClassName="dtPartPlantFcstMethodsDataTable" msprop:Generator_TableVarName="tabledtPartPlantFcstMethods" msprop:Generator_TablePropName="dtPartPlantFcstMethods" msprop:Generator_RowDeletingName="dtPartPlantFcstMethodsRowDeleting" msprop:Generator_RowChangingName="dtPartPlantFcstMethodsRowChanging" msprop:Generator_RowEvHandlerName="dtPartPlantFcstMethodsRowChangeEventHandler" msprop:Generator_RowDeletedName="dtPartPlantFcstMethodsRowDeleted" msprop:Generator_UserTableName="dtPartPlantFcstMethods" msprop:Generator_RowChangedName="dtPartPlantFcstMethodsRowChanged" msprop:Generator_RowEvArgName="dtPartPlantFcstMethodsRowChangeEvent" msprop:Generator_RowClassName="dtPartPlantFcstMethodsRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Company" msprop:Generator_ColumnVarNameInTable="columnCompany" msprop:Generator_ColumnPropNameInRow="Company" msprop:Generator_ColumnPropNameInTable="CompanyColumn" msprop:Generator_UserColumnName="Company">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Plant" msprop:Generator_ColumnVarNameInTable="columnPlant" msprop:Generator_ColumnPropNameInRow="Plant" msprop:Generator_ColumnPropNameInTable="PlantColumn" msprop:Generator_UserColumnName="Plant">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PartNum" msprop:Generator_ColumnVarNameInTable="columnPartNum" msprop:Generator_ColumnPropNameInRow="PartNum" msprop:Generator_ColumnPropNameInTable="PartNumColumn" msprop:Generator_UserColumnName="PartNum">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SalesFcst" msprop:Generator_ColumnVarNameInTable="columnSalesFcst" msprop:Generator_ColumnPropNameInRow="SalesFcst" msprop:Generator_ColumnPropNameInTable="SalesFcstColumn" msprop:Generator_UserColumnName="SalesFcst" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="CustEngFcst" msprop:Generator_ColumnVarNameInTable="columnCustEngFcst" msprop:Generator_ColumnPropNameInRow="CustEngFcst" msprop:Generator_ColumnPropNameInTable="CustEngFcstColumn" msprop:Generator_UserColumnName="CustEngFcst" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="UsageFcst" msprop:Generator_ColumnVarNameInTable="columnUsageFcst" msprop:Generator_ColumnPropNameInRow="UsageFcst" msprop:Generator_ColumnPropNameInTable="UsageFcstColumn" msprop:Generator_UserColumnName="UsageFcst" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="SalesFcstMethod" msprop:Generator_ColumnVarNameInTable="columnSalesFcstMethod" msprop:Generator_ColumnPropNameInRow="SalesFcstMethod" msprop:Generator_ColumnPropNameInTable="SalesFcstMethodColumn" msprop:Generator_UserColumnName="SalesFcstMethod" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustEngFcstMethod" msprop:Generator_ColumnVarNameInTable="columnCustEngFcstMethod" msprop:Generator_ColumnPropNameInRow="CustEngFcstMethod" msprop:Generator_ColumnPropNameInTable="CustEngFcstMethodColumn" msprop:Generator_UserColumnName="CustEngFcstMethod" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="UsageFcstMethod" msprop:Generator_ColumnVarNameInTable="columnUsageFcstMethod" msprop:Generator_ColumnPropNameInRow="UsageFcstMethod" msprop:Generator_ColumnPropNameInTable="UsageFcstMethodColumn" msprop:Generator_UserColumnName="UsageFcstMethod" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PlanningPlant" msprop:Generator_ColumnVarNameInTable="columnPlanningPlant" msprop:Generator_ColumnPropNameInRow="PlanningPlant" msprop:Generator_ColumnPropNameInTable="PlanningPlantColumn" msprop:Generator_UserColumnName="PlanningPlant" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ICFcst" msprop:Generator_ColumnVarNameInTable="columnICFcst" msprop:Generator_ColumnPropNameInRow="ICFcst" msprop:Generator_ColumnPropNameInTable="ICFcstColumn" msprop:Generator_UserColumnName="ICFcst" type="xs:boolean" default="false" />
+              <xs:element name="ICFcstMethod" msprop:Generator_ColumnVarNameInTable="columnICFcstMethod" msprop:Generator_ColumnPropNameInRow="ICFcstMethod" msprop:Generator_ColumnPropNameInTable="ICFcstMethodColumn" msprop:Generator_UserColumnName="ICFcstMethod" type="xs:string" default="String.Empty" />
+              <xs:element name="Inactive" msprop:Generator_ColumnVarNameInTable="columnInactive" msprop:Generator_ColumnPropNameInRow="Inactive" msprop:Generator_ColumnPropNameInTable="InactiveColumn" msprop:Generator_UserColumnName="Inactive" type="xs:boolean" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

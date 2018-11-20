@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsDetailFcst" targetNamespace="http://tempuri.org/dsDetailFcst.xsd" xmlns:mstns="http://tempuri.org/dsDetailFcst.xsd" xmlns="http://tempuri.org/dsDetailFcst.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsDetailFcst" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsDetailFcst" msprop:Generator_UserDSName="dsDetailFcst">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtDetailFcst" msprop:Generator_TableClassName="dtDetailFcstDataTable" msprop:Generator_TableVarName="tabledtDetailFcst" msprop:Generator_TablePropName="dtDetailFcst" msprop:Generator_RowDeletingName="dtDetailFcstRowDeleting" msprop:Generator_RowChangingName="dtDetailFcstRowChanging" msprop:Generator_RowEvHandlerName="dtDetailFcstRowChangeEventHandler" msprop:Generator_RowDeletedName="dtDetailFcstRowDeleted" msprop:Generator_UserTableName="dtDetailFcst" msprop:Generator_RowChangedName="dtDetailFcstRowChanged" msprop:Generator_RowEvArgName="dtDetailFcstRowChangeEvent" msprop:Generator_RowClassName="dtDetailFcstRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Company" msprop:Generator_ColumnVarNameInTable="columnCompany" msprop:Generator_ColumnPropNameInRow="Company" msprop:Generator_ColumnPropNameInTable="CompanyColumn" msprop:Generator_UserColumnName="Company">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Plant" msprop:Generator_ColumnVarNameInTable="columnPlant" msprop:Generator_ColumnPropNameInRow="Plant" msprop:Generator_ColumnPropNameInTable="PlantColumn" msprop:Generator_UserColumnName="Plant">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="PartNum" msprop:Generator_ColumnVarNameInTable="columnPartNum" msprop:Generator_ColumnPropNameInRow="PartNum" msprop:Generator_ColumnPropNameInTable="PartNumColumn" msprop:Generator_UserColumnName="PartNum">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustNum" msprop:Generator_ColumnVarNameInTable="columnCustNum" msprop:Generator_ColumnPropNameInRow="CustNum" msprop:Generator_ColumnPropNameInTable="CustNumColumn" msprop:Generator_UserColumnName="CustNum" type="xs:short" default="0" />
+              <xs:element name="ForeDate" msprop:Generator_ColumnVarNameInTable="columnForeDate" msprop:Generator_ColumnPropNameInRow="ForeDate" msprop:Generator_ColumnPropNameInTable="ForeDateColumn" msprop:Generator_UserColumnName="ForeDate" type="xs:dateTime" />
+              <xs:element name="ForeQty" msprop:Generator_ColumnVarNameInTable="columnForeQty" msprop:Generator_ColumnPropNameInRow="ForeQty" msprop:Generator_ColumnPropNameInTable="ForeQtyColumn" msprop:Generator_UserColumnName="ForeQty" type="xs:int" default="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
