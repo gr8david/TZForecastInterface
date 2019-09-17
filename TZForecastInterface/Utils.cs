@@ -23,7 +23,7 @@ namespace TZForecastInterface
             SectionEnd
         };
 
-        public static int GenerateCSV(DataTable dt, string p_outFile)
+        public static int GenerateCSV(DataTable dt, string p_outFile, bool p_append)
         {
             StringBuilder sb = new StringBuilder();
             int recs = 0;
@@ -85,7 +85,14 @@ namespace TZForecastInterface
             }
 
             //Now we can write the output file.
-            File.WriteAllText(p_outFile, sb.ToString());
+            if (p_append == true)
+            {
+                File.AppendAllText(p_outFile, sb.ToString());
+            }
+            else
+            {
+                File.WriteAllText(p_outFile, sb.ToString());
+            }
             return recs;
         }
 
@@ -233,9 +240,19 @@ namespace TZForecastInterface
                         case MsgLevel.Debug:
                             level = "Debug";
                             break;
+                        case MsgLevel.SectionEnd:
+                            level = "SectionBreak";
+                            break;
                         
                     }
-                    p_msg = DateTime.Now.ToString() + "," +  level + "," + p_Company + "," + p_Plant + ","  + p_PartNum + "," + p_msg;
+                    if (level == "SectionBreak")
+                    {
+                        p_msg = DateTime.Now.ToString() + "," + "," + "," + "," + "," + "##########################################";
+                    }
+                    else
+                    {
+                        p_msg = DateTime.Now.ToString() + "," + level + "," + p_Company + "," + p_Plant + "," + p_PartNum + "," + p_msg;
+                    }
                     log.WriteLine(p_msg);
                     log.Close();
                 }

@@ -20,17 +20,17 @@ namespace TZForecastInterface {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("dsICPOSugg")]
+    [global::System.Xml.Serialization.XmlRootAttribute("dsManualForecast")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class dsICPOSugg : global::System.Data.DataSet {
+    public partial class dsManualForecast : global::System.Data.DataSet {
         
-        private dtICPOSuggDataTable tabledtICPOSugg;
+        private dtManualForecastDataTable tabledtManualForecast;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public dsICPOSugg() {
+        public dsManualForecast() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace TZForecastInterface {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected dsICPOSugg(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected dsManualForecast(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace TZForecastInterface {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["dtICPOSugg"] != null)) {
-                    base.Tables.Add(new dtICPOSuggDataTable(ds.Tables["dtICPOSugg"]));
+                if ((ds.Tables["dtManualForecast"] != null)) {
+                    base.Tables.Add(new dtManualForecastDataTable(ds.Tables["dtManualForecast"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace TZForecastInterface {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public dtICPOSuggDataTable dtICPOSugg {
+        public dtManualForecastDataTable dtManualForecast {
             get {
-                return this.tabledtICPOSugg;
+                return this.tabledtManualForecast;
             }
         }
         
@@ -127,7 +127,7 @@ namespace TZForecastInterface {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            dsICPOSugg cln = ((dsICPOSugg)(base.Clone()));
+            dsManualForecast cln = ((dsManualForecast)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace TZForecastInterface {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["dtICPOSugg"] != null)) {
-                    base.Tables.Add(new dtICPOSuggDataTable(ds.Tables["dtICPOSugg"]));
+                if ((ds.Tables["dtManualForecast"] != null)) {
+                    base.Tables.Add(new dtManualForecastDataTable(ds.Tables["dtManualForecast"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace TZForecastInterface {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tabledtICPOSugg = ((dtICPOSuggDataTable)(base.Tables["dtICPOSugg"]));
+            this.tabledtManualForecast = ((dtManualForecastDataTable)(base.Tables["dtManualForecast"]));
             if ((initTable == true)) {
-                if ((this.tabledtICPOSugg != null)) {
-                    this.tabledtICPOSugg.InitVars();
+                if ((this.tabledtManualForecast != null)) {
+                    this.tabledtManualForecast.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace TZForecastInterface {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "dsICPOSugg";
+            this.DataSetName = "dsManualForecast";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/dsICPOSugg.xsd";
+            this.Namespace = "http://tempuri.org/dsManualForecast.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tabledtICPOSugg = new dtICPOSuggDataTable();
-            base.Tables.Add(this.tabledtICPOSugg);
+            this.tabledtManualForecast = new dtManualForecastDataTable();
+            base.Tables.Add(this.tabledtManualForecast);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializedtICPOSugg() {
+        private bool ShouldSerializedtManualForecast() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace TZForecastInterface {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            dsICPOSugg ds = new dsICPOSugg();
+            dsManualForecast ds = new dsManualForecast();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,49 +270,31 @@ namespace TZForecastInterface {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void dtICPOSuggRowChangeEventHandler(object sender, dtICPOSuggRowChangeEvent e);
+        public delegate void dtManualForecastRowChangeEventHandler(object sender, dtManualForecastRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class dtICPOSuggDataTable : global::System.Data.TypedTableBase<dtICPOSuggRow> {
+        public partial class dtManualForecastDataTable : global::System.Data.TypedTableBase<dtManualForecastRow> {
             
             private global::System.Data.DataColumn columnCompany;
             
             private global::System.Data.DataColumn columnPlant;
             
+            private global::System.Data.DataColumn columnCustNum;
+            
             private global::System.Data.DataColumn columnPartNum;
             
-            private global::System.Data.DataColumn columnDueDate;
+            private global::System.Data.DataColumn columnForeDate;
             
-            private global::System.Data.DataColumn columnRelQty;
-            
-            private global::System.Data.DataColumn columnClassID;
-            
-            private global::System.Data.DataColumn columnShipDate;
-            
-            private global::System.Data.DataColumn columnForePeriod;
-            
-            private global::System.Data.DataColumn columnICFcst_c;
-            
-            private global::System.Data.DataColumn columnICFcstMethod_c;
-            
-            private global::System.Data.DataColumn columnKey1;
-            
-            private global::System.Data.DataColumn columnNumber01;
-            
-            private global::System.Data.DataColumn columnNumber02;
-            
-            private global::System.Data.DataColumn columnCheckBox01;
-            
-            private global::System.Data.DataColumn columnShortChar02;
+            private global::System.Data.DataColumn columnForeQty;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public dtICPOSuggDataTable() {
-                this.TableName = "dtICPOSugg";
+            public dtManualForecastDataTable() {
+                this.TableName = "dtManualForecast";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -320,7 +302,7 @@ namespace TZForecastInterface {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal dtICPOSuggDataTable(global::System.Data.DataTable table) {
+            internal dtManualForecastDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -337,7 +319,7 @@ namespace TZForecastInterface {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected dtICPOSuggDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected dtManualForecastDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
             }
@@ -360,6 +342,14 @@ namespace TZForecastInterface {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn CustNumColumn {
+                get {
+                    return this.columnCustNum;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn PartNumColumn {
                 get {
                     return this.columnPartNum;
@@ -368,97 +358,17 @@ namespace TZForecastInterface {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn DueDateColumn {
+            public global::System.Data.DataColumn ForeDateColumn {
                 get {
-                    return this.columnDueDate;
+                    return this.columnForeDate;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn RelQtyColumn {
+            public global::System.Data.DataColumn ForeQtyColumn {
                 get {
-                    return this.columnRelQty;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ClassIDColumn {
-                get {
-                    return this.columnClassID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ShipDateColumn {
-                get {
-                    return this.columnShipDate;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ForePeriodColumn {
-                get {
-                    return this.columnForePeriod;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ICFcst_cColumn {
-                get {
-                    return this.columnICFcst_c;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ICFcstMethod_cColumn {
-                get {
-                    return this.columnICFcstMethod_c;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Key1Column {
-                get {
-                    return this.columnKey1;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Number01Column {
-                get {
-                    return this.columnNumber01;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn Number02Column {
-                get {
-                    return this.columnNumber02;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn CheckBox01Column {
-                get {
-                    return this.columnCheckBox01;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ShortChar02Column {
-                get {
-                    return this.columnShortChar02;
+                    return this.columnForeQty;
                 }
             }
             
@@ -473,59 +383,50 @@ namespace TZForecastInterface {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public dtICPOSuggRow this[int index] {
+            public dtManualForecastRow this[int index] {
                 get {
-                    return ((dtICPOSuggRow)(this.Rows[index]));
+                    return ((dtManualForecastRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event dtICPOSuggRowChangeEventHandler dtICPOSuggRowChanging;
+            public event dtManualForecastRowChangeEventHandler dtManualForecastRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event dtICPOSuggRowChangeEventHandler dtICPOSuggRowChanged;
+            public event dtManualForecastRowChangeEventHandler dtManualForecastRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event dtICPOSuggRowChangeEventHandler dtICPOSuggRowDeleting;
+            public event dtManualForecastRowChangeEventHandler dtManualForecastRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event dtICPOSuggRowChangeEventHandler dtICPOSuggRowDeleted;
+            public event dtManualForecastRowChangeEventHandler dtManualForecastRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AdddtICPOSuggRow(dtICPOSuggRow row) {
+            public void AdddtManualForecastRow(dtManualForecastRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public dtICPOSuggRow AdddtICPOSuggRow(string Company, string Plant, string PartNum, System.DateTime DueDate, decimal RelQty, string ClassID, System.DateTime ShipDate, int ForePeriod, bool ICFcst_c, string ICFcstMethod_c, string Key1, decimal Number01, decimal Number02, bool CheckBox01, string ShortChar02) {
-                dtICPOSuggRow rowdtICPOSuggRow = ((dtICPOSuggRow)(this.NewRow()));
+            public dtManualForecastRow AdddtManualForecastRow(string Company, string Plant, int CustNum, string PartNum, System.DateTime ForeDate, decimal ForeQty) {
+                dtManualForecastRow rowdtManualForecastRow = ((dtManualForecastRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Company,
                         Plant,
+                        CustNum,
                         PartNum,
-                        DueDate,
-                        RelQty,
-                        ClassID,
-                        ShipDate,
-                        ForePeriod,
-                        ICFcst_c,
-                        ICFcstMethod_c,
-                        Key1,
-                        Number01,
-                        Number02,
-                        CheckBox01,
-                        ShortChar02};
-                rowdtICPOSuggRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowdtICPOSuggRow);
-                return rowdtICPOSuggRow;
+                        ForeDate,
+                        ForeQty};
+                rowdtManualForecastRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowdtManualForecastRow);
+                return rowdtManualForecastRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                dtICPOSuggDataTable cln = ((dtICPOSuggDataTable)(base.Clone()));
+                dtManualForecastDataTable cln = ((dtManualForecastDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -533,7 +434,7 @@ namespace TZForecastInterface {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new dtICPOSuggDataTable();
+                return new dtManualForecastDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -541,19 +442,10 @@ namespace TZForecastInterface {
             internal void InitVars() {
                 this.columnCompany = base.Columns["Company"];
                 this.columnPlant = base.Columns["Plant"];
+                this.columnCustNum = base.Columns["CustNum"];
                 this.columnPartNum = base.Columns["PartNum"];
-                this.columnDueDate = base.Columns["DueDate"];
-                this.columnRelQty = base.Columns["RelQty"];
-                this.columnClassID = base.Columns["ClassID"];
-                this.columnShipDate = base.Columns["ShipDate"];
-                this.columnForePeriod = base.Columns["ForePeriod"];
-                this.columnICFcst_c = base.Columns["ICFcst_c"];
-                this.columnICFcstMethod_c = base.Columns["ICFcstMethod_c"];
-                this.columnKey1 = base.Columns["Key1"];
-                this.columnNumber01 = base.Columns["Number01"];
-                this.columnNumber02 = base.Columns["Number02"];
-                this.columnCheckBox01 = base.Columns["CheckBox01"];
-                this.columnShortChar02 = base.Columns["ShortChar02"];
+                this.columnForeDate = base.Columns["ForeDate"];
+                this.columnForeQty = base.Columns["ForeQty"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -563,78 +455,44 @@ namespace TZForecastInterface {
                 base.Columns.Add(this.columnCompany);
                 this.columnPlant = new global::System.Data.DataColumn("Plant", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPlant);
+                this.columnCustNum = new global::System.Data.DataColumn("CustNum", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCustNum);
                 this.columnPartNum = new global::System.Data.DataColumn("PartNum", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPartNum);
-                this.columnDueDate = new global::System.Data.DataColumn("DueDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnDueDate);
-                this.columnRelQty = new global::System.Data.DataColumn("RelQty", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnRelQty);
-                this.columnClassID = new global::System.Data.DataColumn("ClassID", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnClassID);
-                this.columnShipDate = new global::System.Data.DataColumn("ShipDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnShipDate);
-                this.columnForePeriod = new global::System.Data.DataColumn("ForePeriod", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnForePeriod);
-                this.columnICFcst_c = new global::System.Data.DataColumn("ICFcst_c", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnICFcst_c);
-                this.columnICFcstMethod_c = new global::System.Data.DataColumn("ICFcstMethod_c", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnICFcstMethod_c);
-                this.columnKey1 = new global::System.Data.DataColumn("Key1", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnKey1);
-                this.columnNumber01 = new global::System.Data.DataColumn("Number01", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNumber01);
-                this.columnNumber02 = new global::System.Data.DataColumn("Number02", typeof(decimal), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnNumber02);
-                this.columnCheckBox01 = new global::System.Data.DataColumn("CheckBox01", typeof(bool), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCheckBox01);
-                this.columnShortChar02 = new global::System.Data.DataColumn("ShortChar02", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnShortChar02);
-                this.columnCompany.AllowDBNull = false;
+                this.columnForeDate = new global::System.Data.DataColumn("ForeDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnForeDate);
+                this.columnForeQty = new global::System.Data.DataColumn("ForeQty", typeof(decimal), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnForeQty);
                 this.columnCompany.MaxLength = 8;
-                this.columnPlant.AllowDBNull = false;
                 this.columnPlant.MaxLength = 8;
-                this.columnPartNum.AllowDBNull = false;
                 this.columnPartNum.MaxLength = 50;
-                this.columnDueDate.AllowDBNull = false;
-                this.columnRelQty.AllowDBNull = false;
-                this.columnRelQty.DefaultValue = ((decimal)(0m));
-                this.columnForePeriod.DefaultValue = ((int)(0));
-                this.columnICFcst_c.DefaultValue = ((bool)(false));
-                this.columnICFcstMethod_c.DefaultValue = ((string)(""));
-                this.columnICFcstMethod_c.MaxLength = 50;
-                this.columnKey1.DefaultValue = ((string)(""));
-                this.columnKey1.MaxLength = 50;
-                this.columnNumber01.DefaultValue = ((decimal)(0m));
-                this.columnNumber02.DefaultValue = ((decimal)(0m));
-                this.columnCheckBox01.DefaultValue = ((bool)(false));
-                this.columnShortChar02.DefaultValue = ((string)(""));
-                this.columnShortChar02.MaxLength = 50;
+                this.columnForeQty.DefaultValue = ((decimal)(0m));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public dtICPOSuggRow NewdtICPOSuggRow() {
-                return ((dtICPOSuggRow)(this.NewRow()));
+            public dtManualForecastRow NewdtManualForecastRow() {
+                return ((dtManualForecastRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new dtICPOSuggRow(builder);
+                return new dtManualForecastRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(dtICPOSuggRow);
+                return typeof(dtManualForecastRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.dtICPOSuggRowChanged != null)) {
-                    this.dtICPOSuggRowChanged(this, new dtICPOSuggRowChangeEvent(((dtICPOSuggRow)(e.Row)), e.Action));
+                if ((this.dtManualForecastRowChanged != null)) {
+                    this.dtManualForecastRowChanged(this, new dtManualForecastRowChangeEvent(((dtManualForecastRow)(e.Row)), e.Action));
                 }
             }
             
@@ -642,8 +500,8 @@ namespace TZForecastInterface {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.dtICPOSuggRowChanging != null)) {
-                    this.dtICPOSuggRowChanging(this, new dtICPOSuggRowChangeEvent(((dtICPOSuggRow)(e.Row)), e.Action));
+                if ((this.dtManualForecastRowChanging != null)) {
+                    this.dtManualForecastRowChanging(this, new dtManualForecastRowChangeEvent(((dtManualForecastRow)(e.Row)), e.Action));
                 }
             }
             
@@ -651,8 +509,8 @@ namespace TZForecastInterface {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.dtICPOSuggRowDeleted != null)) {
-                    this.dtICPOSuggRowDeleted(this, new dtICPOSuggRowChangeEvent(((dtICPOSuggRow)(e.Row)), e.Action));
+                if ((this.dtManualForecastRowDeleted != null)) {
+                    this.dtManualForecastRowDeleted(this, new dtManualForecastRowChangeEvent(((dtManualForecastRow)(e.Row)), e.Action));
                 }
             }
             
@@ -660,14 +518,14 @@ namespace TZForecastInterface {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.dtICPOSuggRowDeleting != null)) {
-                    this.dtICPOSuggRowDeleting(this, new dtICPOSuggRowChangeEvent(((dtICPOSuggRow)(e.Row)), e.Action));
+                if ((this.dtManualForecastRowDeleting != null)) {
+                    this.dtManualForecastRowDeleting(this, new dtManualForecastRowChangeEvent(((dtManualForecastRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemovedtICPOSuggRow(dtICPOSuggRow row) {
+            public void RemovedtManualForecastRow(dtManualForecastRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -676,7 +534,7 @@ namespace TZForecastInterface {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                dsICPOSugg ds = new dsICPOSugg();
+                dsManualForecast ds = new dsManualForecast();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -694,7 +552,7 @@ namespace TZForecastInterface {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "dtICPOSuggDataTable";
+                attribute2.FixedValue = "dtManualForecastDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -738,25 +596,30 @@ namespace TZForecastInterface {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class dtICPOSuggRow : global::System.Data.DataRow {
+        public partial class dtManualForecastRow : global::System.Data.DataRow {
             
-            private dtICPOSuggDataTable tabledtICPOSugg;
+            private dtManualForecastDataTable tabledtManualForecast;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal dtICPOSuggRow(global::System.Data.DataRowBuilder rb) : 
+            internal dtManualForecastRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tabledtICPOSugg = ((dtICPOSuggDataTable)(this.Table));
+                this.tabledtManualForecast = ((dtManualForecastDataTable)(this.Table));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Company {
                 get {
-                    return ((string)(this[this.tabledtICPOSugg.CompanyColumn]));
+                    try {
+                        return ((string)(this[this.tabledtManualForecast.CompanyColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Company\' in table \'dtManualForecast\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tabledtICPOSugg.CompanyColumn] = value;
+                    this[this.tabledtManualForecast.CompanyColumn] = value;
                 }
             }
             
@@ -764,10 +627,31 @@ namespace TZForecastInterface {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string Plant {
                 get {
-                    return ((string)(this[this.tabledtICPOSugg.PlantColumn]));
+                    try {
+                        return ((string)(this[this.tabledtManualForecast.PlantColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'Plant\' in table \'dtManualForecast\' is DBNull.", e);
+                    }
                 }
                 set {
-                    this[this.tabledtICPOSugg.PlantColumn] = value;
+                    this[this.tabledtManualForecast.PlantColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int CustNum {
+                get {
+                    try {
+                        return ((int)(this[this.tabledtManualForecast.CustNumColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'CustNum\' in table \'dtManualForecast\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tabledtManualForecast.CustNumColumn] = value;
                 }
             }
             
@@ -775,313 +659,120 @@ namespace TZForecastInterface {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public string PartNum {
                 get {
-                    return ((string)(this[this.tabledtICPOSugg.PartNumColumn]));
-                }
-                set {
-                    this[this.tabledtICPOSugg.PartNumColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime DueDate {
-                get {
-                    return ((global::System.DateTime)(this[this.tabledtICPOSugg.DueDateColumn]));
-                }
-                set {
-                    this[this.tabledtICPOSugg.DueDateColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal RelQty {
-                get {
-                    return ((decimal)(this[this.tabledtICPOSugg.RelQtyColumn]));
-                }
-                set {
-                    this[this.tabledtICPOSugg.RelQtyColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string ClassID {
-                get {
                     try {
-                        return ((string)(this[this.tabledtICPOSugg.ClassIDColumn]));
+                        return ((string)(this[this.tabledtManualForecast.PartNumColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ClassID\' in table \'dtICPOSugg\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'PartNum\' in table \'dtManualForecast\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledtICPOSugg.ClassIDColumn] = value;
+                    this[this.tabledtManualForecast.PartNumColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public System.DateTime ShipDate {
+            public System.DateTime ForeDate {
                 get {
                     try {
-                        return ((global::System.DateTime)(this[this.tabledtICPOSugg.ShipDateColumn]));
+                        return ((global::System.DateTime)(this[this.tabledtManualForecast.ForeDateColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ShipDate\' in table \'dtICPOSugg\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ForeDate\' in table \'dtManualForecast\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledtICPOSugg.ShipDateColumn] = value;
+                    this[this.tabledtManualForecast.ForeDateColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ForePeriod {
+            public decimal ForeQty {
                 get {
                     try {
-                        return ((int)(this[this.tabledtICPOSugg.ForePeriodColumn]));
+                        return ((decimal)(this[this.tabledtManualForecast.ForeQtyColumn]));
                     }
                     catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ForePeriod\' in table \'dtICPOSugg\' is DBNull.", e);
+                        throw new global::System.Data.StrongTypingException("The value for column \'ForeQty\' in table \'dtManualForecast\' is DBNull.", e);
                     }
                 }
                 set {
-                    this[this.tabledtICPOSugg.ForePeriodColumn] = value;
+                    this[this.tabledtManualForecast.ForeQtyColumn] = value;
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool ICFcst_c {
-                get {
-                    try {
-                        return ((bool)(this[this.tabledtICPOSugg.ICFcst_cColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ICFcst_c\' in table \'dtICPOSugg\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtICPOSugg.ICFcst_cColumn] = value;
-                }
+            public bool IsCompanyNull() {
+                return this.IsNull(this.tabledtManualForecast.CompanyColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string ICFcstMethod_c {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtICPOSugg.ICFcstMethod_cColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ICFcstMethod_c\' in table \'dtICPOSugg\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtICPOSugg.ICFcstMethod_cColumn] = value;
-                }
+            public void SetCompanyNull() {
+                this[this.tabledtManualForecast.CompanyColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Key1 {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtICPOSugg.Key1Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Key1\' in table \'dtICPOSugg\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtICPOSugg.Key1Column] = value;
-                }
+            public bool IsPlantNull() {
+                return this.IsNull(this.tabledtManualForecast.PlantColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal Number01 {
-                get {
-                    try {
-                        return ((decimal)(this[this.tabledtICPOSugg.Number01Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Number01\' in table \'dtICPOSugg\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtICPOSugg.Number01Column] = value;
-                }
+            public void SetPlantNull() {
+                this[this.tabledtManualForecast.PlantColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public decimal Number02 {
-                get {
-                    try {
-                        return ((decimal)(this[this.tabledtICPOSugg.Number02Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Number02\' in table \'dtICPOSugg\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtICPOSugg.Number02Column] = value;
-                }
+            public bool IsCustNumNull() {
+                return this.IsNull(this.tabledtManualForecast.CustNumColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool CheckBox01 {
-                get {
-                    try {
-                        return ((bool)(this[this.tabledtICPOSugg.CheckBox01Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'CheckBox01\' in table \'dtICPOSugg\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtICPOSugg.CheckBox01Column] = value;
-                }
+            public void SetCustNumNull() {
+                this[this.tabledtManualForecast.CustNumColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string ShortChar02 {
-                get {
-                    try {
-                        return ((string)(this[this.tabledtICPOSugg.ShortChar02Column]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'ShortChar02\' in table \'dtICPOSugg\' is DBNull.", e);
-                    }
-                }
-                set {
-                    this[this.tabledtICPOSugg.ShortChar02Column] = value;
-                }
+            public bool IsPartNumNull() {
+                return this.IsNull(this.tabledtManualForecast.PartNumColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsClassIDNull() {
-                return this.IsNull(this.tabledtICPOSugg.ClassIDColumn);
+            public void SetPartNumNull() {
+                this[this.tabledtManualForecast.PartNumColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetClassIDNull() {
-                this[this.tabledtICPOSugg.ClassIDColumn] = global::System.Convert.DBNull;
+            public bool IsForeDateNull() {
+                return this.IsNull(this.tabledtManualForecast.ForeDateColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsShipDateNull() {
-                return this.IsNull(this.tabledtICPOSugg.ShipDateColumn);
+            public void SetForeDateNull() {
+                this[this.tabledtManualForecast.ForeDateColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetShipDateNull() {
-                this[this.tabledtICPOSugg.ShipDateColumn] = global::System.Convert.DBNull;
+            public bool IsForeQtyNull() {
+                return this.IsNull(this.tabledtManualForecast.ForeQtyColumn);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsForePeriodNull() {
-                return this.IsNull(this.tabledtICPOSugg.ForePeriodColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetForePeriodNull() {
-                this[this.tabledtICPOSugg.ForePeriodColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsICFcst_cNull() {
-                return this.IsNull(this.tabledtICPOSugg.ICFcst_cColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetICFcst_cNull() {
-                this[this.tabledtICPOSugg.ICFcst_cColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsICFcstMethod_cNull() {
-                return this.IsNull(this.tabledtICPOSugg.ICFcstMethod_cColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetICFcstMethod_cNull() {
-                this[this.tabledtICPOSugg.ICFcstMethod_cColumn] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsKey1Null() {
-                return this.IsNull(this.tabledtICPOSugg.Key1Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetKey1Null() {
-                this[this.tabledtICPOSugg.Key1Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsNumber01Null() {
-                return this.IsNull(this.tabledtICPOSugg.Number01Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetNumber01Null() {
-                this[this.tabledtICPOSugg.Number01Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsNumber02Null() {
-                return this.IsNull(this.tabledtICPOSugg.Number02Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetNumber02Null() {
-                this[this.tabledtICPOSugg.Number02Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsCheckBox01Null() {
-                return this.IsNull(this.tabledtICPOSugg.CheckBox01Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetCheckBox01Null() {
-                this[this.tabledtICPOSugg.CheckBox01Column] = global::System.Convert.DBNull;
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public bool IsShortChar02Null() {
-                return this.IsNull(this.tabledtICPOSugg.ShortChar02Column);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void SetShortChar02Null() {
-                this[this.tabledtICPOSugg.ShortChar02Column] = global::System.Convert.DBNull;
+            public void SetForeQtyNull() {
+                this[this.tabledtManualForecast.ForeQtyColumn] = global::System.Convert.DBNull;
             }
         }
         
@@ -1089,22 +780,22 @@ namespace TZForecastInterface {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class dtICPOSuggRowChangeEvent : global::System.EventArgs {
+        public class dtManualForecastRowChangeEvent : global::System.EventArgs {
             
-            private dtICPOSuggRow eventRow;
+            private dtManualForecastRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public dtICPOSuggRowChangeEvent(dtICPOSuggRow row, global::System.Data.DataRowAction action) {
+            public dtManualForecastRowChangeEvent(dtManualForecastRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public dtICPOSuggRow Row {
+            public dtManualForecastRow Row {
                 get {
                     return this.eventRow;
                 }

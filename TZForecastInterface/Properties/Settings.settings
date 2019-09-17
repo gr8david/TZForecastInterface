@@ -18,17 +18,20 @@
 &lt;/SerializableConnectionString&gt;</DesignTimeValue>
       <Value Profile="(Default)">Data Source=tz-akl-srs1;Initial Catalog=CustomApps;Integrated Security=True</Value>
     </Setting>
-    <Setting Name="OutputFolder" Type="System.String" Scope="User">
+    <Setting Name="OutputFolder" Type="System.String" Scope="Application">
       <Value Profile="(Default)">\\tz-akl-srs1\TZForecastInterface\Output</Value>
     </Setting>
     <Setting Name="LogFolder" Type="System.String" Scope="Application">
-      <Value Profile="(Default)">c:\temp\TZForecastInterface.log</Value>
+      <Value Profile="(Default)">c:\temp</Value>
     </Setting>
-    <Setting Name="DEBUG" Type="System.Boolean" Scope="User">
+    <Setting Name="DEBUG" Type="System.Boolean" Scope="Application">
       <Value Profile="(Default)">True</Value>
     </Setting>
-    <Setting Name="InputFolder" Type="System.String" Scope="User">
+    <Setting Name="InputFolder" Type="System.String" Scope="Application">
       <Value Profile="(Default)">\\tz-akl-smf1\OutputFiles</Value>
+    </Setting>
+    <Setting Name="ManualCustList" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">CUST_MAN,CUST_NPD</Value>
     </Setting>
   </Settings>
 </SettingsFile>

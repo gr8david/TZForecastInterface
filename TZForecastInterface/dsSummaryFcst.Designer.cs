@@ -820,15 +820,15 @@ namespace TZForecastInterface {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public dtICPOSuggDtlRow AdddtICPOSuggDtlRow(string Company, string Plant, string PartNum, int CustNum, System.DateTime ForeDate, int ForeQty) {
+            public dtICPOSuggDtlRow AdddtICPOSuggDtlRow(string Company, string Plant, string PartNum, System.DateTime ForeDate, int ForeQty, int CustNum) {
                 dtICPOSuggDtlRow rowdtICPOSuggDtlRow = ((dtICPOSuggDtlRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Company,
                         Plant,
                         PartNum,
-                        CustNum,
                         ForeDate,
-                        ForeQty};
+                        ForeQty,
+                        CustNum};
                 rowdtICPOSuggDtlRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowdtICPOSuggDtlRow);
                 return rowdtICPOSuggDtlRow;
@@ -854,10 +854,9 @@ namespace TZForecastInterface {
                 this.columnCompany = base.Columns["Company"];
                 this.columnPlant = base.Columns["Plant"];
                 this.columnPartNum = base.Columns["PartNum"];
-                this.columnCustNum = base.Columns["CustNum"];
                 this.columnForeDate = base.Columns["ForeDate"];
                 this.columnForeQty = base.Columns["ForeQty"];
-                
+                this.columnCustNum = base.Columns["CustNum"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -869,13 +868,12 @@ namespace TZForecastInterface {
                 base.Columns.Add(this.columnPlant);
                 this.columnPartNum = new global::System.Data.DataColumn("PartNum", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnPartNum);
-                this.columnCustNum = new global::System.Data.DataColumn("CustNum", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCustNum);
                 this.columnForeDate = new global::System.Data.DataColumn("ForeDate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnForeDate);
                 this.columnForeQty = new global::System.Data.DataColumn("ForeQty", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnForeQty);
-                
+                this.columnCustNum = new global::System.Data.DataColumn("CustNum", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnCustNum);
                 this.columnForeQty.DefaultValue = ((int)(0));
                 this.columnCustNum.DefaultValue = ((int)(0));
             }

@@ -13,8 +13,7 @@ using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//using Erp.BO;
-//using Erp.Proxy.BO;
+
 
 
 namespace TZForecastInterface
@@ -76,11 +75,12 @@ namespace TZForecastInterface
             cbCompany.DisplayMember = "Name";
             cbCompany.ValueMember = "CompanyID";
             cbCompany.SelectedIndex = 0;
+            Global.CompanyID = ((Company)cbCompany.SelectedItem).CompanyID;
 
-            
             // Setup default forecast period
             Period DefaultPeriod = new Period((DateTime.Today.Year * 100) + DateTime.Today.Month);
             tbForecastPeriod.Text = DefaultPeriod.PeriodValue.ToString();
+
 
 
            
@@ -103,12 +103,15 @@ namespace TZForecastInterface
             bool ProcessCustEng = cbProcessCustEng.Checked;
             bool ProcessUsage = cbProcessUsage.Checked;
             bool ProcessIC = cbProcessIC.Checked;
+            bool ProcessManualFcst = cbProcessManualFcst.Checked;
 
             
             // Set the global period values
             Period FirstPeriod = new Period(Convert.ToInt32(tbForecastPeriod.Text));
             Period LastPeriod = new Period(FirstPeriod.PeriodValue);
             LastPeriod.PeriodAdd(11);  // generate forecasts for next 12 months
+
+            Global.ForecastPeriod = FirstPeriod;
 
             // Get the CompanyID from user selection
             //CompanyID = ((Company)cbCompany.SelectedItem).CompanyID;
@@ -180,8 +183,8 @@ namespace TZForecastInterface
                 }
 
                 // Now we can write the detail records to CSV file.
-                string tmpPath = String.Format("{0}\\{1}_SmartForecasts_{2}.csv", Properties.Settings.Default.OutputFolder, Global.CompanyID, DateTime.Today.ToString("dd-MM-yyy"));
-                SMF_RecsWritten = Utils.GenerateCSV(dsSMFDetail.dtDetailFcst,  tmpPath);
+                string tmpPath = String.Format("{0}\\{1}_SmartForecasts_{2}_{3}.csv", Properties.Settings.Default.OutputFolder, Global.CompanyID, Global.ForecastPeriod.PeriodValue, DateTime.Today.ToString("ddMMyy"));
+                SMF_RecsWritten = Utils.GenerateCSV(dsSMFDetail.dtDetailFcst,  tmpPath, false);
 
                 tbSmartforecastsMsg.Text = string.Format(" {0} records processed with {1} warnings and {2} errors", SMF_RecsWritten, 0, 0);
 
@@ -199,8 +202,8 @@ namespace TZForecastInterface
                 // Now we call the forecast calculating function
                 dsDetailFcst dsCustEngDetail = CalculateForecasts(dsCustEngSummary,FirstPeriod.PeriodValue, LastPeriod.PeriodValue);
                 //WriteToCSV(dsCustEngDetail.dtDetailFcst, @"c:\temp\CustEngFcst.csv");
-                string tmpPath = String.Format("{0}\\{1}_CustEngFcst_{2}.csv", Properties.Settings.Default.OutputFolder, Global.CompanyID, DateTime.Today.ToString("dd-MM-yyy"));
-                CustEngRecsWritten = Utils.GenerateCSV(dsCustEngDetail.dtDetailFcst, tmpPath);
+                string tmpPath = String.Format("{0}\\{1}_CustEngFcst_{2}_{3}.csv", Properties.Settings.Default.OutputFolder, Global.CompanyID, Global.ForecastPeriod.PeriodValue, DateTime.Today.ToString("ddMMyy"));
+                CustEngRecsWritten = Utils.GenerateCSV(dsCustEngDetail.dtDetailFcst, tmpPath, false);
                 tbCustEngMsg.Text = string.Format(" {0} records processed with {1} warnings and {2} errors", CustEngRecsWritten, CustEngWarnings, CustEngErrors);
                 if (CustEngErrors > 0)
                 {
@@ -229,8 +232,8 @@ namespace TZForecastInterface
 
                 dsSummaryFcst dsUsageFcstSummary = GetUsageFcst(Global.CompanyID, cbUsageSupressCP.Enabled, nuUsagePeriodsToAvg.Value);
                 dsDetailFcst dsUsageDetail = CalculateForecasts(dsUsageFcstSummary, FirstPeriod.PeriodValue, LastPeriod.PeriodValue);
-                string tmpPath = String.Format("{0}\\{1}_UsageFcst_{2}.csv", Properties.Settings.Default.OutputFolder, Global.CompanyID, DateTime.Today.ToString("dd-MM-yyy"));
-                UsageRecsWritten = Utils.GenerateCSV(dsUsageDetail.dtDetailFcst, tmpPath);
+                string tmpPath = String.Format("{0}\\{1}_UsageFcst_{2}_{3}.csv", Properties.Settings.Default.OutputFolder, Global.CompanyID, Global.ForecastPeriod.PeriodValue, DateTime.Today.ToString("ddMMyy"));
+                UsageRecsWritten = Utils.GenerateCSV(dsUsageDetail.dtDetailFcst, tmpPath, false);
                 tbUsageMsg.Text = string.Format(" {0} records processed with {1} warnings and {2} errors", UsageRecsWritten, 0, 0);
                 if (UsageErrors > 0)
                 {
@@ -345,13 +348,25 @@ namespace TZForecastInterface
                 ICRecsWritten = Utils.GenerateCSV(dsICFcst.dtDetailFcst, tmpPath);
                 */
 
-                tmpPath = String.Format("{0}\\{1}_ICFcstUnits_{2}.csv", Properties.Settings.Default.OutputFolder, Global.CompanyID, DateTime.Today.ToString("dd-MM-yyy"));
+                /*
+                tmpPath = String.Format("{0}\\{1}_ICFcstUnits_{2}_{3}.csv", Properties.Settings.Default.OutputFolder, Global.CompanyID, Global.ForecastPeriod.PeriodValue, DateTime.Today.ToString("ddMMyy"));
                 //int ICRecsWritten = Utils.GenerateCSV(dsICDetail.dtDetailFcst, tmpPath);
-                ICRecsWritten = Utils.GenerateCSV(dsICDetail.dtDetailFcst  , tmpPath);
+                ICRecsWritten = Utils.GenerateCSV(dsICDetail.dtDetailFcst  , tmpPath, false);
 
                 // Now generate CSV for non-TZM and HIT IC PO Suggestions
-                tmpPath = String.Format("{0}\\{1}_ICFcst_Components{2}.csv", Properties.Settings.Default.OutputFolder, Global.CompanyID, DateTime.Today.ToString("dd-MM-yyy"));
-                ICRecsWritten += Utils.GenerateCSV(dsICSummary.dtICPOSuggDtl, tmpPath);
+                tmpPath = String.Format("{0}\\{1}_ICFcst_Components{2}_{3}.csv", Properties.Settings.Default.OutputFolder, Global.CompanyID, Global.ForecastPeriod.PeriodValue,  DateTime.Today.ToString("ddMMyy"));
+                ICRecsWritten += Utils.GenerateCSV(dsICSummary.dtICPOSuggDtl, tmpPath, false);
+                */
+                // 19 Mar 2019 DJP  Write all IC records to a single file
+                tmpPath = String.Format("{0}\\{1}_ICFcst_{2}_{3}.csv", Properties.Settings.Default.OutputFolder, Global.CompanyID, Global.ForecastPeriod.PeriodValue, DateTime.Today.ToString("ddMMyy"));
+                //int ICRecsWritten = Utils.GenerateCSV(dsICDetail.dtDetailFcst, tmpPath);
+                ICRecsWritten = Utils.GenerateCSV(dsICDetail.dtDetailFcst, tmpPath, false);
+
+                // Now generate CSV for non-TZM and HIT IC PO Suggestions
+                tmpPath = String.Format("{0}\\{1}_ICFcst_{2}_{3}.csv", Properties.Settings.Default.OutputFolder, Global.CompanyID, Global.ForecastPeriod.PeriodValue, DateTime.Today.ToString("ddMMyy"));
+                ICRecsWritten += Utils.GenerateCSV(dsICSummary.dtICPOSuggDtl, tmpPath, true);
+
+
 
                 // Finally add forecasts to offset existing Sales Orders to Intercompany partner
                 //dsDetailFcst dsICSalesOrders = CalculateSOForecasts()
@@ -372,6 +387,33 @@ namespace TZForecastInterface
                 {
                     tbInterCoyMsg.BackColor = Color.White;
                     tbInterCoyMsg.ForeColor = Color.Black;
+                }
+            }
+
+            if (ProcessManualFcst == true)
+            {
+                int UsageRecsWritten = 0;
+                int UsageWarnings = 0;
+                int UsageErrors = 0;
+
+                dsManualForecast dsManualFcst = GetManualFcst(Global.CompanyID, cbUsageSupressCP.Enabled, nuUsagePeriodsToAvg.Value);
+                string tmpPath = String.Format("{0}\\{1}_ManualFcst_{2}_{3}.csv", Properties.Settings.Default.OutputFolder, Global.CompanyID, Global.ForecastPeriod.PeriodValue, DateTime.Today.ToString("ddMMyy"));
+                UsageRecsWritten = Utils.GenerateCSV(dsManualFcst.dtManualForecast, tmpPath, false);
+                tbManualMsg.Text = string.Format(" {0} records processed with {1} warnings and {2} errors", UsageRecsWritten, 0, 0);
+                if (UsageErrors > 0)
+                {
+                    tbManualMsg.BackColor = Color.Red;
+                    tbManualMsg.ForeColor = Color.White;
+                }
+                else if (UsageWarnings > 0)
+                {
+                    tbManualMsg.BackColor = Color.Yellow;
+                    tbManualMsg.ForeColor = Color.Black;
+                }
+                else
+                {
+                    tbManualMsg.BackColor = Color.White;
+                    tbManualMsg.ForeColor = Color.Black;
                 }
             }
 
@@ -584,10 +626,56 @@ namespace TZForecastInterface
 
 
         }
-        
-        private void textBox1_TextChanged(object sender, EventArgs e)
+        public dsManualForecast GetManualFcst(string p_CompanyID, Boolean p_SupressCurrentPeriod, Decimal p_NumPeriodsToAvg)
         {
 
+            
+            var watch = System.Diagnostics.Stopwatch.StartNew();
+            Utils.LogMessage(Utils.MsgLevel.Info, "Getting Manual Forecasts from Epicor", false, true);
+            Utils.LogMessage(Utils.MsgLevel.Info, string.Format("     Company = {0}, Period = {1}, Periods To Average = {2}", p_CompanyID, tbForecastPeriod.Text, nuCustEngPeriodsToAvg.Value), false, true);
+
+            // Extract list of dummy forecast customers that are to be replaced after the delete and update
+            // These are manually entered fotecasts in Epicor that are not managed by this interface program
+
+            string tmpCustID;
+            tmpCustID = Properties.Settings.Default.ManualCustList;
+
+            dsManualForecast dsManFcst = new dsManualForecast();
+            try
+            {
+                using (var con = new SqlConnection(Properties.Settings.Default.CustomAppsConnStr))
+                using (var cmd = new SqlCommand("dbo.csp_DM_GetManualForecast", con))
+                using (var da = new SqlDataAdapter(cmd))
+                {
+                    cmd.CommandType = CommandType.StoredProcedure;
+                    cmd.CommandTimeout = 6000;
+                    cmd.Parameters.AddWithValue("@Company", p_CompanyID);
+                    cmd.Parameters.AddWithValue("@CustNumList", "2731");
+                    cmd.Parameters.AddWithValue("@FromDate", Global.ForecastPeriod.FirstDate);
+
+                    da.Fill(dsManFcst.dtManualForecast);
+                }
+            }
+            catch (Exception ex)
+            {
+                Utils.LogMessage(Utils.MsgLevel.Error, "     GetManualFcst 1. {0}" + ex.Message, false, true);
+            }
+
+            finally
+            {
+                watch.Stop();
+                var elapsedMs = watch.ElapsedMilliseconds;
+                Utils.LogMessage(Utils.MsgLevel.Info, string.Format("Completed Getting Manual Forecasts from Epicor. Retrieved {0} records in {1} seconds", dsManFcst.dtManualForecast.Rows.Count.ToString(), ((decimal)elapsedMs / 1000).ToString("N3")), false, true);
+            }
+            return dsManFcst;
+
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+            Global.ForecastPeriod = new Period(Convert.ToInt32(tbForecastPeriod.Text));
+            //Global.ForecastPeriod = new Period(201903);
         }
         
         private dsDetailFcst Calc_Forecasts(dsSummaryFcst p_dsSummary)
@@ -1455,7 +1543,13 @@ namespace TZForecastInterface
                     mytable.Company,
                     mytable.PartNum,
                     mytable.ClassID,
-                    mytable.ForePeriod
+                    mytable.ForePeriod,
+                    mytable.ICFcst_c,
+                    mytable.Number01,
+                    mytable.Number02,
+                    mytable.CheckBox01,
+                    mytable.ShortChar02
+
                 } into g
                 select new
                 {
@@ -1463,12 +1557,34 @@ namespace TZForecastInterface
                     PartNum = (System.String)g.Key.PartNum,
                     ClassID = (System.String)g.Key.ClassID,
                     ForePeriod = (System.Int32)g.Key.ForePeriod,
-                    RelQty = (System.Int32)g.Sum(p => p.RelQty)
+                    RelQty = (System.Int32)g.Sum(p => p.RelQty),
+                    ICFcst_c = (System.Boolean)g.Key.ICFcst_c,
+                    Number01 = (System.Decimal)g.Key.Number01,
+                    Number02 = (System.Decimal)g.Key.Number02,
+                    CheckBox01 = (System.Boolean)g.Key.CheckBox01,
+                    ShortChar02 = (System.String)g.Key.ShortChar02
                 }).ToList();
 
+                // Next check and log any parts that do not have a forecast planning method.
+                // It is possible that PO Suggestions will be generated in the IC partner company
+                // but they do not have an IC Forecast planning setting in this company
+                // Log these parts so they can be investigated and the settings corrected as necessary
+
+                /*
+                 * var result = query.GroupBy(PartNum => PartNum.id)
+                   .Select(grp => grp.First())
+                   .ToList();
+                */
+                //var result = query.Select(x => x.PartNum).Distinct().ToList();
+                var result = query.Where(y => y.ICFcst_c == false).Select(x => x.PartNum).Distinct().ToList();
+                foreach (var x in result)
+                {
+                    Utils.LogMsg(Utils.MsgLevel.Warning, Global.CompanyID, Global.MainPlant, x, "Cannot add IC PO Suggestion. Part/Site Forecast Planning not configured", false, true);
+                }
 
                 foreach (var r in query)
                 {
+                    /* 27 Nov 2018 DJP  Replaced
                     if (r.ClassID.ToString() == "TZM" || r.ClassID.ToString() == "HIT")
                     {
                         string qry_ForecastMethods = String.Format("Company = '{0}' AND Key1 = '{1}'", r.Company.ToString(), "INT01");  // INT01 sets forcast method parameters
@@ -1487,6 +1603,40 @@ namespace TZForecastInterface
                         summaryRow.DayOfWeek = Convert.ToInt16(StringEnum.Parse(typeof(WeekDay), Convert.ToString(rowForecastMethods[0]["ShortChar02"]), true));
                         
                         dsICSummary.dtSummaryFcst.AdddtSummaryFcstRow(summaryRow);
+                    } */
+
+                    // 27 Nov 2018 Replaced if (r.ClassID.ToString() == "TZM" || r.ClassID.ToString() == "HIT")
+                    if (r.ICFcst_c == true)
+                    {
+                        if (r.CheckBox01 != true)
+                        {
+                            string qry_ForecastMethods = String.Format("Company = '{0}' AND Key1 = '{1}'", r.Company.ToString(), "INT01");  // INT01 sets forcast method parameters
+                            DataRow[] rowForecastMethods = dtForecastMethods.Select(qry_ForecastMethods);
+
+                            // Create new forecast data record with appropriate planning plant
+                            dsSummaryFcst.dtSummaryFcstRow summaryRow = dsICSummary.dtSummaryFcst.NewdtSummaryFcstRow();
+                            summaryRow.Company = Global.CompanyID;
+                            summaryRow.Plant = Global.MainPlant;
+                            summaryRow.PartNum = r.PartNum.ToString();
+                            summaryRow.CustNum = Global.ICCustNum;
+                            summaryRow.ForePeriod = Convert.ToInt32(r.ForePeriod);
+                            summaryRow.ForeQty = Convert.ToInt32(r.RelQty);
+                            /* 27 Nov 2018 Replaced
+                            summaryRow.NumFcsts = Convert.ToInt16(rowForecastMethods[0]["Number01"]);
+                            summaryRow.FirstDayOfMonth = Convert.ToInt16(rowForecastMethods[0]["Number02"]);
+                            summaryRow.DayOfWeek = Convert.ToInt16(StringEnum.Parse(typeof(WeekDay), Convert.ToString(rowForecastMethods[0]["ShortChar02"]), true));
+                            */
+                            summaryRow.NumFcsts = Convert.ToInt16(r.Number01);
+                            summaryRow.FirstDayOfMonth = Convert.ToInt16(r.Number02);
+                            summaryRow.DayOfWeek = Convert.ToInt16(StringEnum.Parse(typeof(WeekDay), Convert.ToString(r.ShortChar02), true));
+
+
+                            dsICSummary.dtSummaryFcst.AdddtSummaryFcstRow(summaryRow);
+                        }
+                    }
+                    else
+                    {
+                        Utils.LogMsg(Utils.MsgLevel.Warning, Global.CompanyID, Global.MainPlant, r.PartNum, "Cannot add IC PO Suggestion - not flagged", false, true);
                     }
 
 
@@ -1547,24 +1697,36 @@ namespace TZForecastInterface
 
                 */
                 // Now add non-TZM  HIT PO Suggestions
+                
                 foreach (DataRow row in dsICSugg.dtICPOSugg.Rows)
                 {
-                    if (row["ClassID"].ToString() != "TZM" && row["ClassID"].ToString() != "HIT")
+                    // 27 Nov 2018 Chnage to process dtICPOSugg where CheckBox02 is true
+                    //if (row["ClassID"].ToString() != "TZM" && row["ClassID"].ToString() != "HIT")
+
+                    if (Convert.ToBoolean(row["ICFcst_c"]) == true)
                     {
-                        /*
-                        string qry_ForecastMethods = String.Format("Company = '{0}' AND Key1 = '{1}'", row["Company"].ToString(), "INT01");  // INT01 sets forcast method parameters
-                        DataRow[] rowForecastMethods = dtForecastMethods.Select(qry_ForecastMethods);
-                        */
-                // Create new forecast data record with appropriate planning plant
-                dsSummaryFcst.dtICPOSuggDtlRow summaryRow = dsICSummary.dtICPOSuggDtl.NewdtICPOSuggDtlRow();
-                        summaryRow.Company = Global.CompanyID;
-                        summaryRow.Plant = Global.MainPlant;
-                        summaryRow.PartNum = row["PartNum"].ToString();
-                        summaryRow.CustNum = Global.ICCustNum; 
-                        summaryRow.ForeDate = Convert.ToDateTime(row["ShipDate"]);
-                        summaryRow.ForeQty = Convert.ToInt32(row["RelQty"]);
-                        
-                        dsICSummary.dtICPOSuggDtl.AdddtICPOSuggDtlRow(summaryRow);
+                        if (Convert.ToBoolean(row["CheckBox01"]) == true)
+                        {
+                            /*
+                            string qry_ForecastMethods = String.Format("Company = '{0}' AND Key1 = '{1}'", row["Company"].ToString(), "INT01");  // INT01 sets forcast method parameters
+                            DataRow[] rowForecastMethods = dtForecastMethods.Select(qry_ForecastMethods);
+                            */
+                            // Create new forecast data record with appropriate planning plant
+                            dsSummaryFcst.dtICPOSuggDtlRow summaryRow = dsICSummary.dtICPOSuggDtl.NewdtICPOSuggDtlRow();
+                            summaryRow.Company = Global.CompanyID;
+                            summaryRow.Plant = Global.MainPlant;
+                            summaryRow.PartNum = row["PartNum"].ToString();
+                            summaryRow.CustNum = Global.ICCustNum;
+                            summaryRow.ForeDate = Convert.ToDateTime(row["ShipDate"]);
+                            summaryRow.ForeQty = Convert.ToInt32(row["RelQty"]);
+
+                            dsICSummary.dtICPOSuggDtl.AdddtICPOSuggDtlRow(summaryRow);
+                        }
+                    }
+                    else
+                    {
+                        Utils.LogMsg(Utils.MsgLevel.Warning, Global.CompanyID, Global.MainPlant, Convert.ToString(row["PartNum"]), "Cannot add IC PO Suggestion - not flagged", false, true);
+
                     }
                 }
             }
@@ -1867,6 +2029,15 @@ namespace TZForecastInterface
                 summaryRow.ClassID = row["ClassID"].ToString();
                 summaryRow.ShipDate = Convert.ToDateTime(row["ShipDate"]);
                 summaryRow.ForePeriod = Convert.ToInt32(row["ForePeriod"]);
+                // 27 Nov 2018 DJP - Add additonal columns for forecast method
+                summaryRow.ICFcst_c = Convert.ToBoolean(row["ICFcst_c"]);
+                summaryRow.ICFcstMethod_c = row["ICFcstMethod_c"].ToString();
+                summaryRow.Key1 = row["Key1"].ToString();
+                summaryRow.Number01 = Convert.ToDecimal(row["Number01"]);
+                summaryRow.Number02 = Convert.ToDecimal(row["Number02"]);
+                summaryRow.CheckBox01 = Convert.ToBoolean(row["CheckBox01"]);
+                summaryRow.ShortChar02 = row["ShortChar02"].ToString();
+
                 dsPOSuggestions.dtICPOSugg.AdddtICPOSuggRow(summaryRow);
             } 
         
@@ -1987,7 +2158,7 @@ namespace TZForecastInterface
                 using (var cmd = new SqlCommand("SELECT Company, Key1, Number01, Number02, ShortChar01, ShortChar02 FROM [TZ-AKL-EDB1].ERP10.ice.UD26", con))
                 using (var da = new SqlDataAdapter(cmd))
                 {
-                    cmd.CommandTimeout = 6000;
+                    cmd.CommandTimeout = 60000;
 
                     da.Fill(dtForecastMethods);
                 }
@@ -2049,9 +2220,21 @@ namespace TZForecastInterface
             SafetyStockForm safetystockForm = new SafetyStockForm();
             safetystockForm.Show();
         }
-    }
 
+        private void checkBox1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void epicorInterfaceToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            EpicorInterface epicorinterfaceForm = new EpicorInterface();
+            epicorinterfaceForm.Show();
+        }
+    }
 }
+
+
 
 //var abcCodeBO = Ice.Lib.Framework.WCFServiceSupport.CreateImpl<Erp.Proxy.BO.ABCCodeImpl>(session, Erp.Proxy.BO.ABCCodeImpl.UriPath);
 

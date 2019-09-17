@@ -51,6 +51,7 @@
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.optionsToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.utlilitiesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.epicorInterfaceToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button2 = new System.Windows.Forms.Button();
@@ -67,6 +68,8 @@
             this.nuUsageFcstMnths = new System.Windows.Forms.NumericUpDown();
             this.nnuICFcstMnths = new System.Windows.Forms.NumericUpDown();
             this.nuSMFFcstMnths = new System.Windows.Forms.NumericUpDown();
+            this.cbProcessManualFcst = new System.Windows.Forms.CheckBox();
+            this.tbManualMsg = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.nuCustEngPeriodsToAvg)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.nuUsagePeriodsToAvg)).BeginInit();
@@ -94,7 +97,7 @@
             this.btnGo.BackColor = System.Drawing.Color.Navy;
             this.btnGo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnGo.ForeColor = System.Drawing.Color.White;
-            this.btnGo.Location = new System.Drawing.Point(855, 611);
+            this.btnGo.Location = new System.Drawing.Point(1137, 615);
             this.btnGo.Name = "btnGo";
             this.btnGo.Size = new System.Drawing.Size(144, 44);
             this.btnGo.TabIndex = 1;
@@ -138,6 +141,7 @@
             this.tbForecastPeriod.Name = "tbForecastPeriod";
             this.tbForecastPeriod.Size = new System.Drawing.Size(221, 31);
             this.tbForecastPeriod.TabIndex = 5;
+            this.tbForecastPeriod.Text = "201903";
             this.tbForecastPeriod.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
             // lbForecastPeriod
@@ -235,7 +239,7 @@
             this.button1.BackColor = System.Drawing.Color.Navy;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(285, 611);
+            this.button1.Location = new System.Drawing.Point(1137, 526);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(316, 46);
             this.button1.TabIndex = 16;
@@ -294,9 +298,18 @@
             // 
             // utlilitiesToolStripMenuItem
             // 
+            this.utlilitiesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.epicorInterfaceToolStripMenuItem});
             this.utlilitiesToolStripMenuItem.Name = "utlilitiesToolStripMenuItem";
             this.utlilitiesToolStripMenuItem.Size = new System.Drawing.Size(112, 36);
             this.utlilitiesToolStripMenuItem.Text = "Utlilities";
+            // 
+            // epicorInterfaceToolStripMenuItem
+            // 
+            this.epicorInterfaceToolStripMenuItem.Name = "epicorInterfaceToolStripMenuItem";
+            this.epicorInterfaceToolStripMenuItem.Size = new System.Drawing.Size(279, 38);
+            this.epicorInterfaceToolStripMenuItem.Text = "Epicor Interface";
+            this.epicorInterfaceToolStripMenuItem.Click += new System.EventHandler(this.epicorInterfaceToolStripMenuItem_Click);
             // 
             // label2
             // 
@@ -500,12 +513,32 @@
             0,
             0});
             // 
+            // cbProcessManualFcst
+            // 
+            this.cbProcessManualFcst.AutoSize = true;
+            this.cbProcessManualFcst.Location = new System.Drawing.Point(80, 639);
+            this.cbProcessManualFcst.Name = "cbProcessManualFcst";
+            this.cbProcessManualFcst.Size = new System.Drawing.Size(256, 29);
+            this.cbProcessManualFcst.TabIndex = 35;
+            this.cbProcessManualFcst.Text = "Get Manual Forecasts";
+            this.cbProcessManualFcst.UseVisualStyleBackColor = true;
+            this.cbProcessManualFcst.Click += new System.EventHandler(this.checkBox1_Click);
+            // 
+            // tbManualMsg
+            // 
+            this.tbManualMsg.Location = new System.Drawing.Point(371, 637);
+            this.tbManualMsg.Name = "tbManualMsg";
+            this.tbManualMsg.Size = new System.Drawing.Size(628, 31);
+            this.tbManualMsg.TabIndex = 36;
+            // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.ClientSize = new System.Drawing.Size(1517, 727);
+            this.Controls.Add(this.tbManualMsg);
+            this.Controls.Add(this.cbProcessManualFcst);
             this.Controls.Add(this.nuSMFFcstMnths);
             this.Controls.Add(this.nnuICFcstMnths);
             this.Controls.Add(this.nuUsageFcstMnths);
@@ -595,6 +628,9 @@
         private System.Windows.Forms.NumericUpDown nuSMFFcstMnths;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem1;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
+        private System.Windows.Forms.CheckBox cbProcessManualFcst;
+        private System.Windows.Forms.TextBox tbManualMsg;
+        private System.Windows.Forms.ToolStripMenuItem epicorInterfaceToolStripMenuItem;
     }
 }
 

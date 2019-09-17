@@ -43,48 +43,48 @@ namespace TZForecastInterface.Properties {
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("\\\\tz-akl-srs1\\TZForecastInterface\\Output")]
         public string OutputFolder {
             get {
                 return ((string)(this["OutputFolder"]));
             }
-            set {
-                this["OutputFolder"] = value;
-            }
         }
         
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-        [global::System.Configuration.DefaultSettingValueAttribute("c:\\temp\\TZForecastInterface.log")]
+        [global::System.Configuration.DefaultSettingValueAttribute("c:\\temp")]
         public string LogFolder {
             get {
                 return ((string)(this["LogFolder"]));
             }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("True")]
         public bool DEBUG {
             get {
                 return ((bool)(this["DEBUG"]));
             }
-            set {
-                this["DEBUG"] = value;
-            }
         }
         
-        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.DefaultSettingValueAttribute("\\\\tz-akl-smf1\\OutputFiles")]
         public string InputFolder {
             get {
                 return ((string)(this["InputFolder"]));
             }
-            set {
-                this["InputFolder"] = value;
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("CUST_MAN,CUST_NPD")]
+        public string ManualCustList {
+            get {
+                return ((string)(this["ManualCustList"]));
             }
         }
     }

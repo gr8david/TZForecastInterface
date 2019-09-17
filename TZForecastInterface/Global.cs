@@ -26,5 +26,8 @@ namespace TZForecastInterface
         private static Boolean debug;
         public static Boolean Debug { get => debug; set => debug = value; }
 
+        private static Period forecastPeriod;
+        public static Period ForecastPeriod { get => forecastPeriod; set => forecastPeriod = value; }
+
     }
 }

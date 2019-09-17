@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="dsManualForecast" targetNamespace="http://tempuri.org/dsManualForecast.xsd" xmlns:mstns="http://tempuri.org/dsManualForecast.xsd" xmlns="http://tempuri.org/dsManualForecast.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="dsManualForecast" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="dsManualForecast" msprop:Generator_UserDSName="dsManualForecast">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="dtManualForecast" msprop:Generator_TableClassName="dtManualForecastDataTable" msprop:Generator_TableVarName="tabledtManualForecast" msprop:Generator_TablePropName="dtManualForecast" msprop:Generator_RowDeletingName="dtManualForecastRowDeleting" msprop:Generator_RowChangingName="dtManualForecastRowChanging" msprop:Generator_RowEvHandlerName="dtManualForecastRowChangeEventHandler" msprop:Generator_RowDeletedName="dtManualForecastRowDeleted" msprop:Generator_UserTableName="dtManualForecast" msprop:Generator_RowChangedName="dtManualForecastRowChanged" msprop:Generator_RowEvArgName="dtManualForecastRowChangeEvent" msprop:Generator_RowClassName="dtManualForecastRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Company" msprop:Generator_ColumnVarNameInTable="columnCompany" msprop:Generator_ColumnPropNameInRow="Company" msprop:Generator_ColumnPropNameInTable="CompanyColumn" msprop:Generator_UserColumnName="Company" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Plant" msprop:Generator_ColumnVarNameInTable="columnPlant" msprop:Generator_ColumnPropNameInRow="Plant" msprop:Generator_ColumnPropNameInTable="PlantColumn" msprop:Generator_UserColumnName="Plant" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="CustNum" msprop:Generator_ColumnVarNameInTable="columnCustNum" msprop:Generator_ColumnPropNameInRow="CustNum" msprop:Generator_ColumnPropNameInTable="CustNumColumn" msprop:Generator_UserColumnName="CustNum" type="xs:int" minOccurs="0" />
+              <xs:element name="PartNum" msprop:Generator_ColumnVarNameInTable="columnPartNum" msprop:Generator_ColumnPropNameInRow="PartNum" msprop:Generator_ColumnPropNameInTable="PartNumColumn" msprop:Generator_UserColumnName="PartNum" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="ForeDate" msprop:Generator_ColumnVarNameInTable="columnForeDate" msprop:Generator_ColumnPropNameInRow="ForeDate" msprop:Generator_ColumnPropNameInTable="ForeDateColumn" msprop:Generator_UserColumnName="ForeDate" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ForeQty" msprop:Generator_ColumnVarNameInTable="columnForeQty" msprop:Generator_ColumnPropNameInRow="ForeQty" msprop:Generator_ColumnPropNameInTable="ForeQtyColumn" msprop:Generator_UserColumnName="ForeQty" type="xs:decimal" default="0" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

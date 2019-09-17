@@ -41,6 +41,31 @@
               <xs:element name="ClassID" msprop:Generator_ColumnVarNameInTable="columnClassID" msprop:Generator_ColumnPropNameInRow="ClassID" msprop:Generator_ColumnPropNameInTable="ClassIDColumn" msprop:Generator_UserColumnName="ClassID" type="xs:string" minOccurs="0" />
               <xs:element name="ShipDate" msprop:Generator_ColumnVarNameInTable="columnShipDate" msprop:Generator_ColumnPropNameInRow="ShipDate" msprop:Generator_ColumnPropNameInTable="ShipDateColumn" msprop:Generator_UserColumnName="ShipDate" type="xs:dateTime" minOccurs="0" />
               <xs:element name="ForePeriod" msprop:Generator_ColumnVarNameInTable="columnForePeriod" msprop:Generator_ColumnPropNameInRow="ForePeriod" msprop:Generator_ColumnPropNameInTable="ForePeriodColumn" msprop:Generator_UserColumnName="ForePeriod" type="xs:int" default="0" minOccurs="0" />
+              <xs:element name="ICFcst_c" msprop:Generator_ColumnVarNameInTable="columnICFcst_c" msprop:Generator_ColumnPropNameInRow="ICFcst_c" msprop:Generator_ColumnPropNameInTable="ICFcst_cColumn" msprop:Generator_UserColumnName="ICFcst_c" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="ICFcstMethod_c" msprop:Generator_ColumnVarNameInTable="columnICFcstMethod_c" msprop:Generator_ColumnPropNameInRow="ICFcstMethod_c" msprop:Generator_ColumnPropNameInTable="ICFcstMethod_cColumn" msprop:Generator_UserColumnName="ICFcstMethod_c" default="" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Key1" msprop:Generator_ColumnVarNameInTable="columnKey1" msprop:Generator_ColumnPropNameInRow="Key1" msprop:Generator_ColumnPropNameInTable="Key1Column" msprop:Generator_UserColumnName="Key1" default="" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Number01" msprop:Generator_ColumnVarNameInTable="columnNumber01" msprop:Generator_ColumnPropNameInRow="Number01" msprop:Generator_ColumnPropNameInTable="Number01Column" msprop:Generator_UserColumnName="Number01" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="Number02" msprop:Generator_ColumnVarNameInTable="columnNumber02" msprop:Generator_ColumnPropNameInRow="Number02" msprop:Generator_ColumnPropNameInTable="Number02Column" msprop:Generator_UserColumnName="Number02" type="xs:decimal" default="0" minOccurs="0" />
+              <xs:element name="CheckBox01" msprop:Generator_ColumnVarNameInTable="columnCheckBox01" msprop:Generator_ColumnPropNameInRow="CheckBox01" msprop:Generator_ColumnPropNameInTable="CheckBox01Column" msprop:Generator_UserColumnName="CheckBox01" type="xs:boolean" default="false" minOccurs="0" />
+              <xs:element name="ShortChar02" msprop:Generator_ColumnVarNameInTable="columnShortChar02" msprop:Generator_ColumnPropNameInRow="ShortChar02" msprop:Generator_ColumnPropNameInTable="ShortChar02Column" msprop:Generator_UserColumnName="ShortChar02" default="" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

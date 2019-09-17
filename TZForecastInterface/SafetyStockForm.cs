@@ -20,12 +20,14 @@ namespace TZForecastInterface
 
         private void button1_Click(object sender, EventArgs e)
         {
+            Global.Debug = true;
             // First we call the stored procedure to get the data we need
             // This will return a dsSafetyStock dataset.
 
             dsSafetyStock dsSafetyStockData = new dsSafetyStock();
 
             var watch = System.Diagnostics.Stopwatch.StartNew();
+            Utils.LogMessage(Utils.MsgLevel.SectionEnd, "", false, true);
             Utils.LogMessage(Utils.MsgLevel.Info, "Getting Safety Stock data", false, true);
             Utils.LogMessage(Utils.MsgLevel.Info, string.Format("     Company = {0}", Global.CompanyID), false, true);
             try
@@ -53,7 +55,7 @@ namespace TZForecastInterface
             {
                 watch.Stop();
                 var elapsedMs = watch.ElapsedMilliseconds;
-                Utils.LogMessage(Utils.MsgLevel.Info, string.Format("Completed Getting Safety Stopck data. Retrieved {0} records in {1} seconds", dsSafetyStockData.dtSafetyStock.Rows.Count.ToString(), ((decimal)elapsedMs / 1000).ToString("N3")), false, true);
+                Utils.LogMessage(Utils.MsgLevel.Info, string.Format("Completed Getting Safety Stock data. Retrieved {0} records in {1} seconds", dsSafetyStockData.dtSafetyStock.Rows.Count.ToString(), ((decimal)elapsedMs / 1000).ToString("N3")), false, true);
             }
             // Now we process each record and build the database for output to CSV file
 
@@ -76,10 +78,12 @@ namespace TZForecastInterface
                 t_SSQty = 0;
                 t_ICSSQty = 0;
 
-                if (row.PartNum == "509-048-102")
+                /*
+                if (row.PartNum == "012-000-060")
                 {
                     MessageBox.Show("Stop");
                 }
+                */
 
 
                 if (row.SafetyStock == true)
@@ -112,6 +116,10 @@ namespace TZForecastInterface
                                     if (row.WeeksSafety > 0)
                                     {
                                         t_SSQty = Convert.ToInt32((t_MonthlyForecast * 12 / 52) * row.WeeksSafety);
+                                        if (Global.Debug)
+                                        {
+                                            Utils.LogMessage(Utils.MsgLevel.Debug, string.Format("{0}, {1}, {2}, Monthly Forecast = {3}, Weeks Safety = {4}, Safety Stock = {5}", row.Company, row.Plant, row.PartNum, Convert.ToInt32(t_MonthlyForecast * 12 / 52), row.WeeksSafety, t_SSQty), false, true);
+                                        }
                                     }
                                     else
                                     {
@@ -242,11 +250,12 @@ namespace TZForecastInterface
             }
 
             // Write to CSV file
-            string tmpPath = String.Format("{0}\\{1}_SafetyStock_{2}.csv", Properties.Settings.Default.OutputFolder, Global.CompanyID, DateTime.Today.ToString("dd-MM-yyy"));
-            int SSRecsWritten = Utils.GenerateCSV(dsDetail.dtDetailSafetyStock, tmpPath);
+            string tmpPath = String.Format("{0}\\{1}_SafetyStock_{2}_{3}.csv", Properties.Settings.Default.OutputFolder, Global.CompanyID, Global.ForecastPeriod.PeriodValue, DateTime.Today.ToString("dd-MM-yyy"));
+            int SSRecsWritten = Utils.GenerateCSV(dsDetail.dtDetailSafetyStock, tmpPath, false);
             //tbsafetyStockMsg.Text = string.Format(" {0} records processed with {1} warnings and {2} errors", CustEngRecsWritten, CustEngWarnings, CustEngErrors);
 
 
+            Utils.LogMessage(Utils.MsgLevel.Info, string.Format("Safety Stock processing completed"), true, true);
 
         }
 
@@ -264,6 +273,13 @@ namespace TZForecastInterface
             cbCompany.ValueMember = "CompanyID";
             cbCompany.SelectedIndex = 0;
 
+
+
+            Global.CompanyID = ((Company)cbCompany.SelectedItem).CompanyID;
+        }
+
+        private void cbCompany_SelectedIndexChanged(object sender, EventArgs e)
+        {
             Global.CompanyID = ((Company)cbCompany.SelectedItem).CompanyID;
         }
     }
